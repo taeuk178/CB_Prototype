@@ -4,7 +4,8 @@ import CoreMotion
 
 class ViewController: UIViewController {
     
-    let motionManager = CMHeadphoneMotionManager()
+    // 싱글턴이나 유저디폴트로 개선
+    var isDeviceMotionCheck: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,39 +13,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func setBluetooth() {
-        startHeadphoneMotionUpdates()
-    }
-    
-    func startHeadphoneMotionUpdates() {
-        // 모션 매니저가 사용 가능한지 확인
-        guard motionManager.isDeviceMotionAvailable else {
-            print("Device Motion is not available.")
-            return
-        }
         
-        // 모션 업데이트 시작
-        motionManager.startDeviceMotionUpdates(to: .main) { [weak self] (motion, error) in
-            guard error == nil, let motion = motion else {
-                print("Error reading motion data: \(error!)")
-                return
+        switch isDeviceMotionCheck {
+            // 운동 상세화면
+        case true:
+            
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ExerciseStartViewController") as? ExerciseStartViewController {
+                
+                let reactor = ExerciseStartReactor()
+                vc.reactor = reactor
+                self.present(vc, animated: true)
             }
-            
-            // 여기에서 모션 데이터를 사용
-            // 예: 가속도계와 자이로스코프 데이터 읽기
-            let attitude = motion.attitude
-            let rotationRate = motion.rotationRate
-            let userAcceleration = motion.userAcceleration
-            
-            print("Attitude: \(attitude)")
-            print("Rotation Rate: \(rotationRate)")
-            print("User Acceleration: \(userAcceleration)")
+            // 에어팟 감지 화면
+        case false: 
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AirPodsCheckViewController") as? AirPodsCheckViewController {
+                
+                let reactor = AirPodsCheckReactor()
+                vc.reactor = reactor
+                self.present(vc, animated: true)
+            }
         }
-    }
-    
-    deinit {
-        // 뷰 컨트롤러가 해제될 때 모션 업데이트 중지
-        if motionManager.isDeviceMotionActive {
-            motionManager.stopDeviceMotionUpdates()
-        }
+//        startHeadphoneMotionUpdates()
     }
 }

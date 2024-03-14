@@ -13,6 +13,11 @@
 		302A923F2BA0988000777D66 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 302A923E2BA0988000777D66 /* Base */; };
 		302A92412BA0988200777D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302A92402BA0988200777D66 /* Assets.xcassets */; };
 		302A92442BA0988200777D66 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 302A92432BA0988200777D66 /* Base */; };
+		30ACF5792BA364AA00993543 /* ExerciseStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF5782BA364AA00993543 /* ExerciseStartViewController.swift */; };
+		30ACF57C2BA364D400993543 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 30ACF57B2BA364D400993543 /* ReactorKit */; };
+		30ACF57E2BA364F200993543 /* ExerciseStartReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF57D2BA364F200993543 /* ExerciseStartReactor.swift */; };
+		30ACF5812BA366A000993543 /* AirPodsCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF5802BA366A000993543 /* AirPodsCheckViewController.swift */; };
+		30ACF5832BA366BD00993543 /* AirPodsCheckReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACF5822BA366BD00993543 /* AirPodsCheckReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,10 @@
 		302A92402BA0988200777D66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302A92432BA0988200777D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302A92452BA0988200777D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30ACF5782BA364AA00993543 /* ExerciseStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStartViewController.swift; sourceTree = "<group>"; };
+		30ACF57D2BA364F200993543 /* ExerciseStartReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStartReactor.swift; sourceTree = "<group>"; };
+		30ACF5802BA366A000993543 /* AirPodsCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsCheckViewController.swift; sourceTree = "<group>"; };
+		30ACF5822BA366BD00993543 /* AirPodsCheckReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsCheckReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30ACF57C2BA364D400993543 /* ReactorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,12 +69,32 @@
 				302A92372BA0988000777D66 /* AppDelegate.swift */,
 				302A92392BA0988000777D66 /* SceneDelegate.swift */,
 				302A923B2BA0988000777D66 /* ViewController.swift */,
+				30ACF5842BA3672200993543 /* AirPodCheck */,
+				30ACF57F2BA3668400993543 /* ExerciseStart */,
 				302A923D2BA0988000777D66 /* Main.storyboard */,
 				302A92402BA0988200777D66 /* Assets.xcassets */,
 				302A92422BA0988200777D66 /* LaunchScreen.storyboard */,
 				302A92452BA0988200777D66 /* Info.plist */,
 			);
 			path = CB_Prototype;
+			sourceTree = "<group>";
+		};
+		30ACF57F2BA3668400993543 /* ExerciseStart */ = {
+			isa = PBXGroup;
+			children = (
+				30ACF5782BA364AA00993543 /* ExerciseStartViewController.swift */,
+				30ACF57D2BA364F200993543 /* ExerciseStartReactor.swift */,
+			);
+			path = ExerciseStart;
+			sourceTree = "<group>";
+		};
+		30ACF5842BA3672200993543 /* AirPodCheck */ = {
+			isa = PBXGroup;
+			children = (
+				30ACF5802BA366A000993543 /* AirPodsCheckViewController.swift */,
+				30ACF5822BA366BD00993543 /* AirPodsCheckReactor.swift */,
+			);
+			path = AirPodCheck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +113,9 @@
 			dependencies = (
 			);
 			name = CB_Prototype;
+			packageProductDependencies = (
+				30ACF57B2BA364D400993543 /* ReactorKit */,
+			);
 			productName = CB_Prototype;
 			productReference = 302A92342BA0988000777D66 /* CB_Prototype.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 302A922B2BA0988000777D66;
+			packageReferences = (
+				30ACF57A2BA364D400993543 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+			);
 			productRefGroup = 302A92352BA0988000777D66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30ACF5812BA366A000993543 /* AirPodsCheckViewController.swift in Sources */,
 				302A923C2BA0988000777D66 /* ViewController.swift in Sources */,
 				302A92382BA0988000777D66 /* AppDelegate.swift in Sources */,
+				30ACF57E2BA364F200993543 /* ExerciseStartReactor.swift in Sources */,
 				302A923A2BA0988000777D66 /* SceneDelegate.swift in Sources */,
+				30ACF5792BA364AA00993543 /* ExerciseStartViewController.swift in Sources */,
+				30ACF5832BA366BD00993543 /* AirPodsCheckReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +258,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -365,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30ACF57A2BA364D400993543 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30ACF57B2BA364D400993543 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30ACF57A2BA364D400993543 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 302A922C2BA0988000777D66 /* Project object */;
 }
